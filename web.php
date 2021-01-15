@@ -28,3 +28,5 @@ Route::get('foreach_loop', 'App\Http\Controllers\ViewController@foreach_loop');
 Route::get('master', 'App\Http\Controllers\ViewController@master');
 Route::get('comp', 'App\Http\Controllers\ViewController@comp');
 Route::get('book', 'App\Http\Controllers\ViewController@book');
+Route::get('route/param/{id?}', 'App\Http\Controllers\RouteController@param')->where(['id' => '[0-9]{2,3}']);
+Route::get('route/search/{keywd?}', 'App\Http\Controllers\RouteController@search')->where('keywd', '.*');
